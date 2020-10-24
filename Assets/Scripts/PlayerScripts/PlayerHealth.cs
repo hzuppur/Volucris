@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         maxHealth = health;
+        HUD.Instance.SetHealth(health);
     }
 
     public void takeDamage(int damageAmount)
