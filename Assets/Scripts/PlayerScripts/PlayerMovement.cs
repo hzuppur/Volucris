@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
     public float runSpeed = 40f;
-    public Animator Animator;
+    public Animator animator;
     private float _horizontalMove = 0f;
     private bool _jump = false;
     private bool _crouch = false;
@@ -19,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
     {
         _horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        Animator.SetFloat(Speed, Mathf.Abs(_horizontalMove));
+        animator.SetFloat(Speed, Mathf.Abs(_horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
             _jump = true;
-            Animator.SetBool(IsJumping, true);
+            animator.SetBool(IsJumping, true);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -45,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLanding()
     {
-        Animator.SetBool(IsJumping, false);
+        animator.SetBool(IsJumping, false);
     }
 
     public void OnCrouching(bool isCrouching)
     {
-        Animator.SetBool(IsCrouching, isCrouching);
+        animator.SetBool(IsCrouching, isCrouching);
     }
 }
