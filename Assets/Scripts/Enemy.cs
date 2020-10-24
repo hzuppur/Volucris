@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public GameObject deathEffect;
     public float Speed;
-    public int damageAmount = 50;
+    public int damageAmount = 25;
 
 
     // Start is called before the first frame update
