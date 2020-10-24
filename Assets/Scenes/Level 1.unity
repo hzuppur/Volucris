@@ -856,6 +856,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxEffect: 0.7
   parallaxEffectY: 0.7
+--- !u!1 &1343304817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 521247405294608950, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
+  m_PrefabInstance: {fileID: 1895380097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1343304828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343304817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46ff755c17af06458ac0b9e1e5190d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!4 &1452489123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 521247405294608946, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
@@ -3399,6 +3417,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 521247405294608950, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 521247405294608950, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

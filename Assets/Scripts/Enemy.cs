@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public GameObject deathEffect;
     public float Speed;
+    public int damageAmount = 50;
 
 
     // Start is called before the first frame update
@@ -29,12 +30,13 @@ public class Enemy : MonoBehaviour
             Speed = Speed * -1;
             transform.Rotate(0, 180, 0);
         }
-
-        PlayerMovement player = collision.GetComponent<PlayerMovement>();
-        if (player != null)
-        {
-            //player.takeDamage();
+        
+        if(collision.gameObject.tag == "Player"){
+            PlayerHealth playerHeatlh = collision.gameObject.GetComponent<PlayerHealth>();
+            playerHeatlh.takeDamage(damageAmount);
         }
+
+        
     }
 
     public void TakeDamage(int damage){
