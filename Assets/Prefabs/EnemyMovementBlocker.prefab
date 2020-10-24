@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8404538841018177595}
   - component: {fileID: 4850846057521479678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyMovementBlocker
   m_TagString: EnemyMovementBlocker
   m_Icon: {fileID: 0}
