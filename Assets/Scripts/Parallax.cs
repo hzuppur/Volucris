@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    public GameObject cam;
     public float parallaxEffect;
     public float parallaxEffectY;
     
@@ -19,10 +18,10 @@ public class Parallax : MonoBehaviour
 
     void Update()
     {
-        var position = cam.transform.position;
+        var position = Events.GetCameraPos().position;
         float tempX = position.x * (1 - parallaxEffect);
         float distX = position.x * parallaxEffect;
-        float tempY = position.y * (1 - parallaxEffectY);
+        
         float distY = position.y * parallaxEffectY;
 
         var position1 = transform.position;

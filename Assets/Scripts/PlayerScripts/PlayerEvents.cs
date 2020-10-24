@@ -9,6 +9,11 @@ public class PlayerEvents : MonoBehaviour
     {
         Events.OnGetPlayerPos += OnGetPlayerPos;
     }
+    
+    private void OnDestroy()
+    {
+        Events.OnGetPlayerPos -= OnGetPlayerPos;
+    }
 
     private Transform OnGetPlayerPos()
     {
