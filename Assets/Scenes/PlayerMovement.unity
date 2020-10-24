@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 167845595661802702, guid: ab8c06643bedfb243b893a277f4c5831, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ce5a73756e792487393aa2ae50a68c66, type: 2}
     - target: {fileID: 167845595661802703, guid: ab8c06643bedfb243b893a277f4c5831, type: 3}
       propertyPath: Speed
       value: 5
