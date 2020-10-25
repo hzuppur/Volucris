@@ -36,6 +36,6 @@ public class SceneController : MonoBehaviour
     private void OnRestart()
     {
         //StartCoroutine(SceneReload());
-        SceneManager.LoadSceneAsync("MainScene", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("Level 1", LoadSceneMode.Single);
     }
 }

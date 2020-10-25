@@ -14,4 +14,9 @@ public static class Events
     public static event Action OnRestart;
     public static void Restart() => OnRestart?.Invoke();
     
+    public static event Action OnPlayerDeath;
+    public static void PlayerDeath() => OnPlayerDeath?.Invoke();
+    
+    public static event Action OnPlayerWin;
+    public static void PlayerWin() => OnPlayerWin?.Invoke();
 }

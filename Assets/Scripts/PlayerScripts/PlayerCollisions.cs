@@ -9,7 +9,11 @@ public class PlayerCollisions : MonoBehaviour
     {
         if (other.collider.gameObject.name == "MapBottom")
         {
-            Events.Restart();
+            gameObject.SetActive(false);
+            Events.PlayerDeath();
+        }else if (other.collider.gameObject.name == "WinLocation")
+        {
+            Events.PlayerWin();
         }
     }
 }
