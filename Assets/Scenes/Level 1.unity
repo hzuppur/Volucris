@@ -1612,6 +1612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  takeDamageSound: {fileID: 11400000, guid: fd7ff40479443e446b28735bf6a946ee, type: 2}
+  dieSound: {fileID: 11400000, guid: c14e648afe008f049b3a6bc7d031ecd0, type: 2}
 --- !u!61 &1343304829
 BoxCollider2D:
   m_ObjectHideFlags: 0
