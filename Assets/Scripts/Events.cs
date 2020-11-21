@@ -19,4 +19,13 @@ public static class Events
     
     public static event Action OnPlayerWin;
     public static void PlayerWin() => OnPlayerWin?.Invoke();
+    
+    public static event Action<WeaponUpgradeData> OnWeaponUpgradePickup;
+    public static void WeaponUpgradePickup(WeaponUpgradeData weaponUpgradeData) => OnWeaponUpgradePickup?.Invoke(weaponUpgradeData);
+    
+    public static event Action<WeaponUpgradeData> OnSelectWeapon;
+    public static void SelectWeapon(WeaponUpgradeData data) => OnSelectWeapon?.Invoke(data);
+    
+    public static event Func<WeaponUpgradeData> OnGetSelectedWeaponData;
+    public static WeaponUpgradeData GetSelectedWeaponData() => OnGetSelectedWeaponData?.Invoke();
 }

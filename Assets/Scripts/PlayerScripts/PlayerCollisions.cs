@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
@@ -14,6 +11,10 @@ public class PlayerCollisions : MonoBehaviour
         }else if (other.collider.gameObject.name == "WinLocation")
         {
             Events.PlayerWin();
+        }else if (other.collider.gameObject.name.Contains("WeaponUpgrade"))
+        {
+            Events.WeaponUpgradePickup(other.gameObject.GetComponent<WeaponUpgrade>().weaponUpgradeData);
+            Destroy(other.gameObject);
         }
     }
 }

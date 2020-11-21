@@ -6,23 +6,58 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public WeaponUpgradeData currentWeaponData;
 
+    private float _nextShot;
+
+    private void Awake()
+    {
+        Events.OnSelectWeapon += OnSelectWeapon;
+        Events.OnGetSelectedWeaponData += OnGetSelectedWeaponData;
+    }
+    private void OnDestroy()
+    {
+        Events.OnSelectWeapon -= OnSelectWeapon;
+        Events.OnGetSelectedWeaponData -= OnGetSelectedWeaponData;
     }
 
-    // Update is called once per frame
+    private WeaponUpgradeData OnGetSelectedWeaponData()
+    {
+        return currentWeaponData;
+    }
+
+    private void OnSelectWeapon(WeaponUpgradeData data)
+    {
+        currentWeaponData = data;
+        _nextShot = Time.time;
+    }
+
+    void Start()
+    {
+        _nextShot = Time.time;
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            Shoot();
+            if (Time.time >= _nextShot)
+            {
+                Shoot();
+            }
         }
     }
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        _nextShot = Time.time + currentWeaponData.shootingSpeed;
+        for (int i = 0; i < currentWeaponData.bulletAmount; i++)
+        {
+            //Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            float bulletRotNorm = Random.Range(-currentWeaponData.bullerSpread / 180, currentWeaponData.bullerSpread /
+                180);
+            Quaternion bulletRot = Quaternion.FromToRotation(new Vector3(1, bulletRotNorm, 0), firePoint.right);
+            Instantiate(bulletPrefab, firePoint.position, bulletRot);
+        }
     }
 }
