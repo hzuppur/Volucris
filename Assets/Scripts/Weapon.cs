@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     public WeaponUpgradeData currentWeaponData;
 
     private float _nextShot;
+    private AudioClipGroup _sound;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class Weapon : MonoBehaviour
     {
         currentWeaponData = data;
         _nextShot = Time.time;
+        _sound = data.sound;
     }
 
     void Start()
@@ -51,6 +53,8 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         _nextShot = Time.time + currentWeaponData.shootingSpeed;
+        _sound.Play();
+        
         for (int i = 0; i < currentWeaponData.bulletAmount; i++)
         {
             //Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);

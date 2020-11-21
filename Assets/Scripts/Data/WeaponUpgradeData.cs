@@ -11,4 +11,5 @@ public class WeaponUpgradeData : ScriptableObject
     public Sprite sprite;
     public int bulletAmount = 1;
     public float bullerSpread = 0f;
+    public AudioClipGroup sound;
 }

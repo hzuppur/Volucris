@@ -15,3 +15,6 @@ MonoBehaviour:
   shootingSpeed: 2
   damage: 1
   sprite: {fileID: 2195878554720839607, guid: 186c0b2e322bb2b45a11116fa99ffd28, type: 3}
+  bulletAmount: 1
+  bullerSpread: 0
+  sound: {fileID: 11400000, guid: 60b2111c40611b24ab509e75f33ba8f8, type: 2}

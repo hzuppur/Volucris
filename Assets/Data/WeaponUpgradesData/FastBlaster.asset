@@ -17,3 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 1580747275825210771, guid: de53b23c5590bac468847d54a8357361, type: 3}
   bulletAmount: 1
   bullerSpread: 0
+  sound: {fileID: 11400000, guid: 60b2111c40611b24ab509e75f33ba8f8, type: 2}
