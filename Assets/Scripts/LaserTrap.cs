@@ -14,10 +14,14 @@ public class LaserTrap : MonoBehaviour
     public Vector3 m_from = new Vector3(0, 0, 45.0f);
     public Vector3 m_to = new Vector3(0, 0, -45.0f);
     public float rotationSpeed = 0.4f;
+    public float timeToToggleLaserOn = 1;
+    private bool LaserIsOn;
      private void Awake()
     {
         m_transform = GetComponent<Transform>();
         hitPlayer = true;
+        LaserIsOn = true;
+        InvokeRepeating("switchBool",0,timeToToggleLaserOn);
     }
 
     private void Update()
@@ -28,8 +32,18 @@ public class LaserTrap : MonoBehaviour
         Quaternion to = Quaternion.Euler(m_to);
         float lerp = 0.5F * (1.0F + Mathf.Sin(Mathf.PI * Time.realtimeSinceStartup * rotationSpeed));
         m_transform.localRotation = Quaternion.Lerp(from, to, lerp);
-        ShootLaser();
+        if(LaserIsOn){
+            ShootLaser();
+            }
+        else{
+            Draw2DRay(new Vector2(0,0),new Vector2(0,0));
+        }
     }
+
+    void switchBool(){
+        LaserIsOn = !LaserIsOn;
+    }
+
 
 
 
