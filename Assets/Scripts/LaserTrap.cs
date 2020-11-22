@@ -21,7 +21,9 @@ public class LaserTrap : MonoBehaviour
         m_transform = GetComponent<Transform>();
         hitPlayer = true;
         LaserIsOn = true;
-        InvokeRepeating("switchBool",0,timeToToggleLaserOn);
+        if(timeToToggleLaserOn != 0){
+            InvokeRepeating("switchBool",0,timeToToggleLaserOn);
+        }
     }
 
     private void Update()
