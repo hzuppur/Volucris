@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public int damageAmount = 25;
     public Animator Animator;
 
-    private static readonly int aniSpeed = Animator.StringToHash("Speed");
+    private static readonly int aniSpeed = Animator.StringToHash("aniSpeed");
     private Vector3 startPos;
     private bool goingBackToStart = false;
 
