@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public GameObject deathEffect;
     public float Speed;
+    public bool Vertical;
     public int damageAmount = 25;
 
 
@@ -19,7 +20,18 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 movement = new Vector3(Speed, 0, 0);
+        Vector3 movement;
+
+        if (Vertical)
+        {
+            movement = new Vector3(0, Speed, 0);
+        }
+
+        else
+        {
+            movement = new Vector3(Speed, 0, 0);
+        }
+
         transform.position += movement * Time.deltaTime;
     }
 
@@ -28,7 +40,10 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "EnemyMovementBlocker")
         {
             Speed = Speed * -1;
-            transform.Rotate(0, 180, 0);
+            if (!Vertical)
+            {
+                transform.Rotate(0, 180, 0);
+            }
         }
         
         if(collision.gameObject.tag == "Player"){
