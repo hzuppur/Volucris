@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
-    bool onGround;
+    public bool onGround;
     [SerializeField]
     Transform groundCheck;
 
