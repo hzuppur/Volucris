@@ -15,15 +15,11 @@ public class InvetoryPresenter : MonoBehaviour
     private void Awake()
     {
         Events.OnWeaponUpgradePickup += OnWeaponUpgradePickup;
-        Events.OnPlayerDeath += HideInventory;
-        Events.OnPlayerWin += HideInventory;
     }
     
     private void OnDestroy()
     {
         Events.OnWeaponUpgradePickup -= OnWeaponUpgradePickup;
-        Events.OnPlayerDeath -= HideInventory;
-        Events.OnPlayerWin -= HideInventory;
     }
 
     private void Start()

@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
@@ -13,6 +15,12 @@ public class HUD : MonoBehaviour
     public Text YouWin;
     public Text YouLose;
     public Button RestartButton;
+    public Button MenuButton;
+    public Button QuitButton;
+    public InvetoryPresenter Inventory;
+
+    private bool _onScreenMenuActive;
+    private bool _playerActive;
 
     private void Awake()
     {
@@ -25,26 +33,63 @@ public class HUD : MonoBehaviour
         Events.OnPlayerDeath -= OnPlayerDeath;
         Events.OnPlayerWin -= OnPlayerWin;
     }
-    
+
+    private void Start()
+    {
+        _playerActive = true;
+        ShowOnScreenMenu(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("escape" ) && _playerActive) 
+        {
+            _onScreenMenuActive = ShowOnScreenMenu(!_onScreenMenuActive);
+        }
+    }
+
     private void OnPlayerWin()
     {
-        HealthBar.gameObject.SetActive(false);
-        HealthBarBase.gameObject.SetActive(false);
+        _playerActive = false;
         YouWin.gameObject.SetActive(true);
-        RestartButton.gameObject.SetActive(true);
+        ShowOnScreenMenu(true);
     }
 
     private void OnPlayerDeath()
     {
-        HealthBar.gameObject.SetActive(false);
-        HealthBarBase.gameObject.SetActive(false);
+        _playerActive = false;
         YouLose.gameObject.SetActive(true);
-        RestartButton.gameObject.SetActive(true);
+        ShowOnScreenMenu(true);
+    }
+
+    private bool ShowOnScreenMenu(bool show)
+    {
+        HealthBar.gameObject.SetActive(!show);
+        HealthBarBase.gameObject.SetActive(!show);
+        Inventory.gameObject.SetActive(!show);
+        
+        RestartButton.gameObject.SetActive(show);
+        MenuButton.gameObject.SetActive(show);
+        QuitButton.gameObject.SetActive(show);
+        gameObject.GetComponent<Image>().enabled = show;
+        
+        return show;
     }
 
     public void OnRestartButtonPressed()
     {
         Events.Restart();
+    }
+    
+    public void OnMenuButtonPressed()
+    {
+        MenuPresenter.Instance?.gameObject.SetActive(true);
+        SceneManager.LoadScene("MainMenuScene");
+    }
+    
+    public void OnQuitButtonPressed()
+    {
+        Application.Quit();
     }
 
     public void SetHealth(int health)
