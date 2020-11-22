@@ -12,7 +12,10 @@ public class MenuPresenter : MonoBehaviour
     public Button StartButton;
     public Button OptionsButton;
     public Button ExitButton;
+    public Text VolucrisText;
 
+    public OptionsPresenter OptionsPresenter;
+    public Button OptionsBackButton;
     private void Awake()
     {
         if (Instance != null)
@@ -23,6 +26,9 @@ public class MenuPresenter : MonoBehaviour
         
         StartButton.onClick.AddListener(StartButtonClicked);
         ExitButton.onClick.AddListener(OnExit);
+        OptionsButton.onClick.AddListener(OnOptionsButtonClicked);
+        OptionsBackButton.onClick.AddListener(OnOptionsBackButtonClicked);
+        
         DontDestroyOnLoad(gameObject);
         Instance = this;
     }
@@ -42,5 +48,23 @@ public class MenuPresenter : MonoBehaviour
     public void OnExit()
     {
         Application.Quit();
+    }
+
+    public void OnOptionsButtonClicked()
+    {
+        OptionsPresenter.gameObject.SetActive(true);
+        StartButton.gameObject.SetActive(false);
+        OptionsButton.gameObject.SetActive(false);
+        ExitButton.gameObject.SetActive(false);
+        VolucrisText.gameObject.SetActive(false);
+    }
+    
+    public void OnOptionsBackButtonClicked()
+    {
+        OptionsPresenter.gameObject.SetActive(false);
+        StartButton.gameObject.SetActive(true);
+        OptionsButton.gameObject.SetActive(true);
+        ExitButton.gameObject.SetActive(true);
+        VolucrisText.gameObject.SetActive(true);
     }
 }
