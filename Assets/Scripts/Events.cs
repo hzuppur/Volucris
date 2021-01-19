@@ -57,4 +57,10 @@ public static class Events
     
     public static event Func<List<string>> OnGetWeaponUpgradePickups;
     public static List<string> GetWeaponUpgradePickups() => OnGetWeaponUpgradePickups?.Invoke();
+    
+    public static event Action<string> OnDoorOpened;
+    public static void DoorOpened(string data) => OnDoorOpened?.Invoke(data);
+    
+    public static event Func<List<string>> OnGetDoorOpened;
+    public static List<string> GetDoorOpened() => OnGetDoorOpened?.Invoke();
 }

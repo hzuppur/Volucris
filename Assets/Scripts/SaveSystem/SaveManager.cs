@@ -62,6 +62,7 @@ public class SaveManager : MonoBehaviour
         activeSave.level = SceneManager.GetActiveScene().name;
         activeSave.enemiesKilled = Events.GetEnemiesKilled();
         activeSave.weaponsCollected = Events.GetWeaponUpgradePickups();
+        activeSave.doorsOpened = Events.GetDoorOpened();
 
         var serializer = new XmlSerializer(typeof(SaveData));
         var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
@@ -124,4 +125,5 @@ public class SaveData
     public string level;
     public List<string> enemiesKilled;
     public List<string> weaponsCollected;
+    public List<string> doorsOpened;
 }

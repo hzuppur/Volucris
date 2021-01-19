@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Player"){
+            Events.DoorOpened(transform.parent.gameObject.name);
             Destroy(this.transform.parent.gameObject);
         }
     }
