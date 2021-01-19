@@ -61,6 +61,7 @@ public class SaveManager : MonoBehaviour
         activeSave.playerHealth = Events.GetPlayerHealth();
         activeSave.level = SceneManager.GetActiveScene().name;
         activeSave.enemiesKilled = Events.GetEnemiesKilled();
+        activeSave.weaponsCollected = Events.GetWeaponUpgradePickups();
 
         var serializer = new XmlSerializer(typeof(SaveData));
         var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);

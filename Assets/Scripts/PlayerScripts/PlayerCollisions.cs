@@ -16,7 +16,7 @@ public class PlayerCollisions : MonoBehaviour
         }
         else if (other.collider.gameObject.name.Contains("WeaponUpgrade"))
         {
-            Events.WeaponUpgradePickup(other.gameObject.GetComponent<WeaponUpgrade>().weaponUpgradeData);
+            Events.WeaponUpgradePickup(other.gameObject.GetComponent<WeaponUpgrade>().weaponUpgradeData, other.gameObject.name);
             Destroy(other.gameObject);
         }
         else if (other.collider.gameObject.name.Contains("SavePoint"))

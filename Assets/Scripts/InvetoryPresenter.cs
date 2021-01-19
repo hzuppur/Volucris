@@ -51,7 +51,7 @@ public class InvetoryPresenter : MonoBehaviour
         }
     }
 
-    private void OnWeaponUpgradePickup(WeaponUpgradeData data)
+    private void OnWeaponUpgradePickup(WeaponUpgradeData data, string _)
     {
         if (_inventoryContents.Contains(data)) return;
         

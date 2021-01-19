@@ -20,10 +20,10 @@ public static class Events
     public static event Action OnPlayerWin;
     public static void PlayerWin() => OnPlayerWin?.Invoke();
 
-    public static event Action<WeaponUpgradeData> OnWeaponUpgradePickup;
+    public static event Action<WeaponUpgradeData, string> OnWeaponUpgradePickup;
 
-    public static void WeaponUpgradePickup(WeaponUpgradeData weaponUpgradeData) =>
-        OnWeaponUpgradePickup?.Invoke(weaponUpgradeData);
+    public static void WeaponUpgradePickup(WeaponUpgradeData weaponUpgradeData, string name) =>
+        OnWeaponUpgradePickup?.Invoke(weaponUpgradeData, name);
 
     public static event Action<WeaponUpgradeData> OnSelectWeapon;
     public static void SelectWeapon(WeaponUpgradeData data) => OnSelectWeapon?.Invoke(data);
@@ -54,4 +54,7 @@ public static class Events
     
     public static event Func<List<string>> OnGetEnemiesKilled;
     public static List<string> GetEnemiesKilled() => OnGetEnemiesKilled?.Invoke();
+    
+    public static event Func<List<string>> OnGetWeaponUpgradePickups;
+    public static List<string> GetWeaponUpgradePickups() => OnGetWeaponUpgradePickups?.Invoke();
 }

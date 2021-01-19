@@ -20,11 +20,11 @@ public class GameAssets : MonoBehaviour
 
     public void AddFastBlaster()
     {
-        Events.WeaponUpgradePickup(fastBlasterData);
+        Events.WeaponUpgradePickup(fastBlasterData, "");
     }
     
     public void AddShotgun()
     {
-        Events.WeaponUpgradePickup(shotgunData);
+        Events.WeaponUpgradePickup(shotgunData, "");
     }
 }

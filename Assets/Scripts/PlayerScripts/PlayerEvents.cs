@@ -6,19 +6,24 @@ using UnityEngine;
 public class PlayerEvents : MonoBehaviour
 {
     private List<string> _enemiesKilled = new List<string>();
-    
+    private List<string> _weaponsCollected = new List<string>();
+
     private void Awake()
     {
         Events.OnGetPlayerPos += OnGetPlayerPos;
         Events.OnEnemyKilled += OnEnemyKilled;
         Events.OnGetEnemiesKilled += OnGetEnemiesKilled;
+        Events.OnWeaponUpgradePickup += OnWeaponUpgradePickup;
+        Events.OnGetWeaponUpgradePickups += OnGetWeaponUpgradePickups;
     }
-    
+
     private void OnDestroy()
     {
         Events.OnGetPlayerPos -= OnGetPlayerPos;
         Events.OnEnemyKilled -= OnEnemyKilled;
         Events.OnGetEnemiesKilled -= OnGetEnemiesKilled;
+        Events.OnWeaponUpgradePickup -= OnWeaponUpgradePickup;
+        Events.OnGetWeaponUpgradePickups -= OnGetWeaponUpgradePickups;
     }
 
     private void Start()
@@ -29,10 +34,17 @@ public class PlayerEvents : MonoBehaviour
             Events.SetInventory(SaveManager.Instance.GetInventory());
             Events.SelectWeapon(SaveManager.Instance.GetActiveWeapon());
             Events.SetPlayerHealth(SaveManager.Instance.activeSave.playerHealth);
+            _enemiesKilled = SaveManager.Instance.activeSave.enemiesKilled;
+            _weaponsCollected = SaveManager.Instance.activeSave.weaponsCollected;
 
-            foreach (var enemy in SaveManager.Instance.activeSave.enemiesKilled)
+            foreach (var enemy in _enemiesKilled)
             {
                 Destroy(GameObject.Find(enemy));
+            }
+
+            foreach (var weapon in _weaponsCollected)
+            {
+                Destroy(GameObject.Find(weapon));
             }
         }
         else
@@ -50,9 +62,19 @@ public class PlayerEvents : MonoBehaviour
     {
         _enemiesKilled.Add(data);
     }
-    
+
     private List<string> OnGetEnemiesKilled()
     {
         return _enemiesKilled;
+    }
+
+    private void OnWeaponUpgradePickup(WeaponUpgradeData _, string weaponName)
+    {
+        _weaponsCollected.Add(weaponName);
+    }
+
+    private List<string> OnGetWeaponUpgradePickups()
+    {
+        return _weaponsCollected;
     }
 }
