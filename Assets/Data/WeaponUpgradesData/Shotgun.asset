@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7b9ce3eaaab674faf4d262bed2059b, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  weaponName: Shotgun
   shootingSpeed: 2
   damage: 1
   sprite: {fileID: 21300000, guid: 067c3fe3535aa5041b7cb22038ed38f9, type: 3}

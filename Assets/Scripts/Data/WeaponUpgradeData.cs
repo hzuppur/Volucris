@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 [CreateAssetMenu(menuName = "Volucris/WeaponUpgrade")]
 public class WeaponUpgradeData : ScriptableObject
 {
+    public string weaponName;
     public float shootingSpeed = 2f;
     public float damage = 1f;
     public Sprite sprite;

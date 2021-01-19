@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8feef7c273588fe47aafaf84a68258ef
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - fastBlasterData: {fileID: 11400000, guid: 4c9b1b3f29c844b4fba4a2fbf4896b9f, type: 2}
+  - shotgunData: {fileID: 11400000, guid: f280e58f988325740aa52290ddf5d212, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,40 +10,52 @@ public class InvetoryPresenter : MonoBehaviour
     public Button weaponSelectPrefab;
     public WeaponUpgradeData baseWeapon;
 
-    private List<WeaponUpgradeData> inventoryContents;
+    private List<WeaponUpgradeData> _inventoryContents;
 
     private void Awake()
     {
         Events.OnWeaponUpgradePickup += OnWeaponUpgradePickup;
+        Events.OnGetInventory += GetInventory;
+        Events.OnSetInventory += SetInventory;
     }
     
     private void OnDestroy()
     {
         Events.OnWeaponUpgradePickup -= OnWeaponUpgradePickup;
+        Events.OnGetInventory -= GetInventory;
+        Events.OnSetInventory -= SetInventory;
     }
 
     private void Start()
     {
-        inventoryContents = new List<WeaponUpgradeData>();
-        inventoryContents.Add(baseWeapon);
+        if (SaveManager.Instance.hasLoaded)
+        {
+            _inventoryContents = SaveManager.Instance.GetInventory();
+            Events.SelectWeapon(SaveManager.Instance.GetActiveWeapon());
+        }
+        else
+        {
+            _inventoryContents = new List<WeaponUpgradeData>();
+            _inventoryContents.Add(baseWeapon);
+            Events.SelectWeapon(baseWeapon);
+        }
         RefreshInventory();
-        Events.SelectWeapon(baseWeapon);
     }
 
     private void Update()
     {
         int pressed = GetPressedNumber();
-        if (pressed != -1 && pressed <= inventoryContents.Count)
+        if (pressed != -1 && pressed <= _inventoryContents.Count)
         {
-            Events.SelectWeapon(inventoryContents[pressed-1]);
+            Events.SelectWeapon(_inventoryContents[pressed-1]);
         }
     }
 
     private void OnWeaponUpgradePickup(WeaponUpgradeData data)
     {
-        if (inventoryContents.Contains(data)) return;
+        if (_inventoryContents.Contains(data)) return;
         
-        inventoryContents.Add(data);
+        _inventoryContents.Add(data);
 
         RefreshInventory();
     }
@@ -54,7 +66,7 @@ public class InvetoryPresenter : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (WeaponUpgradeData weaponData in inventoryContents)
+        foreach (WeaponUpgradeData weaponData in _inventoryContents)
         {
             Button weaponButton = Instantiate(weaponSelectPrefab, gameObject.transform);
             weaponButton.GetComponent<WeaponPresenter>().weaponUpgradeData = weaponData;
@@ -73,5 +85,15 @@ public class InvetoryPresenter : MonoBehaviour
     private void HideInventory()
     {
         gameObject.SetActive(false);
+    }
+
+    private List<WeaponUpgradeData> GetInventory()
+    {
+        return _inventoryContents;
+    }
+    
+    private void SetInventory(List<WeaponUpgradeData> data)
+    {
+        _inventoryContents = data;
     }
 }

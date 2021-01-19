@@ -10,6 +10,7 @@ public class MenuPresenter : MonoBehaviour
 {
     public static MenuPresenter Instance;
     public Button StartButton;
+    public Button ContinueButton;
     public Button OptionsButton;
     public Button ExitButton;
     public Text VolucrisText;
@@ -25,6 +26,7 @@ public class MenuPresenter : MonoBehaviour
         }
         
         StartButton.onClick.AddListener(StartButtonClicked);
+        ContinueButton.onClick.AddListener(ContinueButtonClicked);
         ExitButton.onClick.AddListener(OnExit);
         OptionsButton.onClick.AddListener(OnOptionsButtonClicked);
         OptionsBackButton.onClick.AddListener(OnOptionsBackButtonClicked);
@@ -33,11 +35,24 @@ public class MenuPresenter : MonoBehaviour
         Instance = this;
     }
 
-    public void StartButtonClicked()
+    private static void StartButtonClicked()
     {
-        SceneManager.LoadScene("Level 1");
+        SaveManager.Instance.DeleteSaveData();
+        LoadLevel();
     }
-    
+
+    private static void ContinueButtonClicked()
+    {
+        LoadLevel();
+    }
+
+    private static void LoadLevel()
+    {
+        SceneManager.LoadScene(SaveManager.Instance.activeSave.level.Contains("Level")
+            ? SaveManager.Instance.activeSave.level
+            : "Level 1");
+    }
+
     private void OnLevelWasLoaded(int level)
     {
         if (level == 0) return;

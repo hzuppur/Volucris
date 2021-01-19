@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7b9ce3eaaab674faf4d262bed2059b, type: 3}
   m_Name: FastBlaster
   m_EditorClassIdentifier: 
+  weaponName: FastBlaster
   shootingSpeed: 0.2
   damage: 1
   sprite: {fileID: 1580747275825210771, guid: de53b23c5590bac468847d54a8357361, type: 3}

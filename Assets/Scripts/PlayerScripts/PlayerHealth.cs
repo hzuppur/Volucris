@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Range(0, 100)]
     public int health = 100;
     public AudioClipGroup takeDamageSound;
     public AudioClipGroup dieSound;
@@ -15,11 +16,15 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         Events.OnPlayerDeath += OnPlayerDeath;
+        Events.OnGetPlayerHealth += GetPlayerHealth;
+        Events.OnSetPlayerHealth += SetPlayerHealth;
     }
 
     private void OnDestroy()
     {
         Events.OnPlayerDeath -= OnPlayerDeath;
+        Events.OnGetPlayerHealth -= GetPlayerHealth;
+        Events.OnSetPlayerHealth -= SetPlayerHealth;
     }
 
     void Start()
@@ -47,4 +52,13 @@ public class PlayerHealth : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private int GetPlayerHealth()
+    {
+        return health;
+    }
+    
+    private void SetPlayerHealth(int data)
+    {
+        health = data;
+    }
 }

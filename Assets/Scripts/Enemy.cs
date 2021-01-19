@@ -116,6 +116,7 @@ public class Enemy : MonoBehaviour
 
     void Die(){
         //Instantiate(deathEffect,transform.position,Quaternion.identity);
+        Events.EnemyKilled(transform.parent.gameObject.name);
         Destroy(gameObject);
     }
 }

@@ -8,16 +8,19 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static HUD Instance;
+    [Header("In game hud")]
     public Image HealthBar;
     public Image HealthBarBase;
+    public InvetoryPresenter Inventory;
+    
+    [Header("Win and lose screen")]
     public Text YouWin;
     public Text YouLose;
     public Button RestartButton;
+    public Button LastCheckpointButton;
     public Button MenuButton;
     public Button QuitButton;
-    public InvetoryPresenter Inventory;
 
     private bool _onScreenMenuActive;
     private bool _playerActive;
@@ -69,6 +72,7 @@ public class HUD : MonoBehaviour
         Inventory.gameObject.SetActive(!show);
         
         RestartButton.gameObject.SetActive(show);
+        LastCheckpointButton.gameObject.SetActive(show);
         MenuButton.gameObject.SetActive(show);
         QuitButton.gameObject.SetActive(show);
         gameObject.GetComponent<Image>().enabled = show;
@@ -78,7 +82,13 @@ public class HUD : MonoBehaviour
 
     public void OnRestartButtonPressed()
     {
+        SaveManager.Instance.DeleteSaveData();
         Events.Restart();
+    }
+    
+    public void OnLastCheckpointButton()
+    {
+        Events.LoadCheckpoint();
     }
     
     public void OnMenuButtonPressed()
