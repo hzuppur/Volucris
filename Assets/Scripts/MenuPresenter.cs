@@ -35,6 +35,11 @@ public class MenuPresenter : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        ContinueButton.interactable = !SaveManager.Instance.hasLoaded ? false : this;
+    }
+
     private static void StartButtonClicked()
     {
         SaveManager.Instance.DeleteSaveData();
@@ -55,9 +60,14 @@ public class MenuPresenter : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (level == 0) return;
-
-        gameObject.SetActive(false);
+        if (level == 0)
+        {
+            ContinueButton.interactable = !SaveManager.Instance.hasLoaded ? false : this;
+        }
+        else
+        {
+            gameObject.SetActive(false); 
+        }
     }
 
     public void OnExit()
