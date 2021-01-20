@@ -3869,7 +3869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   takeDamageSound: {fileID: 11400000, guid: fd7ff40479443e446b28735bf6a946ee, type: 2}
-  dieSound: {fileID: 11400000, guid: c14e648afe008f049b3a6bc7d031ecd0, type: 2}
+  dieSound: {fileID: 11400000, guid: c795944ba2a028741ab58e5d72e205c3, type: 2}
 --- !u!61 &1343304829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10757,6 +10757,14 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1343304822}
+    - target: {fileID: 521247405294608939, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
+      propertyPath: pickupWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 7dc7b3af5f3133e45812af3156da4a08, type: 2}
+    - target: {fileID: 521247405294608939, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
+      propertyPath: saveGameAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: abb809e1406f7bf44b09d8e9709f6566, type: 2}
     - target: {fileID: 521247405294608940, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
       propertyPath: currentWeaponData
       value: 
@@ -10809,6 +10817,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 521247405294608948, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 28bedb9807e45d74f9093efa8c82d793, type: 2}
     - target: {fileID: 521247405294608950, guid: 1fa2da3fb770ee942ba908eee774119a, type: 3}
       propertyPath: m_Name
       value: Player

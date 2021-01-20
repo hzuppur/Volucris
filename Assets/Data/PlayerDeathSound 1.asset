@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f24e200034584840b15c4d5de07e653, type: 3}
-  m_Name: PlayerDeathSound
+  m_Name: PlayerDeathSound 1
   m_EditorClassIdentifier: 
   VolumeMin: 1
   VolumeMax: 1
