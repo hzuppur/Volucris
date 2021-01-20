@@ -471,6 +471,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bee155585d83a94388a58e3c3aa011b, type: 2}
   - {fileID: 11400000, guid: 07a2b4730c418574587acdf1866e2970, type: 2}
   - {fileID: 11400000, guid: df94be8a33b783d498dd638bd2bd9238, type: 2}
+  - {fileID: 11400000, guid: 74f45be8d044b1844bcfb393588c5498, type: 2}
   activeSave:
     saveName: 
     respawnPosition: {x: 0, y: 0, z: 0}
@@ -1138,6 +1139,7 @@ Transform:
   - {fileID: 1426431094}
   - {fileID: 619753838}
   - {fileID: 1801232730}
+  - {fileID: 2081897996}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11441,6 +11443,84 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2926591358637136488, guid: 8ec6b923d94a339439c58af7e2a957dc, type: 3}
   m_PrefabInstance: {fileID: 2080833798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2081897995
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 595461319}
+    m_Modifications:
+    - target: {fileID: 7570320424345021168, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_Name
+      value: WeaponUpgrade (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021172, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021172, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -531.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -262.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.175987
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021174, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4265445015118211463, guid: 8454feed9fe00f04894513e9fefd8ce8, type: 3}
+    - target: {fileID: 7570320424345021175, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: weaponUpgradeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 74f45be8d044b1844bcfb393588c5498, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+--- !u!4 &2081897996 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+  m_PrefabInstance: {fileID: 2081897995}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2104294081 stripped
 MonoBehaviour:

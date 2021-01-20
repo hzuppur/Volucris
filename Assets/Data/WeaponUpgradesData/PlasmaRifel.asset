@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7b9ce3eaaab674faf4d262bed2059b, type: 3}
+  m_Name: PlasmaRifel
+  m_EditorClassIdentifier: 
+  weaponName: PlasmaRifel
+  shootingSpeed: 0.2
+  bulletSpeed: 40
+  damage: 55
+  sprite: {fileID: 6718972946676642575, guid: de75574f1b831c242a239742e3f6936e, type: 3}
+  bulletAmount: 1
+  bullerSpread: 10
+  sound: {fileID: 11400000, guid: 60b2111c40611b24ab509e75f33ba8f8, type: 2}
+  bulletColor: {r: 0.9768792, g: 0.3504361, b: 0.990566, a: 1}

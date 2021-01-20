@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7b9ce3eaaab674faf4d262bed2059b, type: 3}
+  m_Name: PlasmaShotgun
+  m_EditorClassIdentifier: 
+  weaponName: PlasmaShotgun
+  shootingSpeed: 2
+  bulletSpeed: 8
+  damage: 40
+  sprite: {fileID: -4265445015118211463, guid: 8454feed9fe00f04894513e9fefd8ce8, type: 3}
+  bulletAmount: 12
+  bullerSpread: 55
+  sound: {fileID: 11400000, guid: c1234ac9302f51e4e91262cd335a2656, type: 2}
+  bulletColor: {r: 0, g: 0.60495615, b: 1, a: 1}
