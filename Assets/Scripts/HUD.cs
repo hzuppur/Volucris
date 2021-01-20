@@ -82,7 +82,7 @@ public class HUD : MonoBehaviour
 
     public void OnRestartButtonPressed()
     {
-        SaveManager.Instance.DeleteSaveData();
+        SaveManager.Instance.RestartLevel();
         Events.Restart();
     }
     

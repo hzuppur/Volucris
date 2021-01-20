@@ -81,10 +81,10 @@ public class SaveManager : MonoBehaviour
     {
         string dataPath = Application.persistentDataPath;
 
-        if (!System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save")) return;
+        if (!System.IO.File.Exists(dataPath + "/" + "save1" + ".save")) return;
 
         var serializer = new XmlSerializer(typeof(SaveData));
-        var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Open);
+        var stream = new FileStream(dataPath + "/" + "save1" + ".save", FileMode.Open);
         activeSave = serializer.Deserialize(stream) as SaveData;
         stream.Close();
 
@@ -100,14 +100,15 @@ public class SaveManager : MonoBehaviour
         string dataPath = Application.persistentDataPath;
 
         if (!System.IO.File.Exists(dataPath + "/" + "save1" + ".save")) return;
-
         File.Delete(dataPath + "/" + "save1" + ".save");
 
         hasLoaded = false;
         
         activeSave = new SaveData();
-
         Debug.Log("Deleted");
+        
+        if (!System.IO.File.Exists(dataPath + "/" + "levelBackup" + ".save")) return;
+        File.Delete(dataPath + "/" + "levelBackup" + ".save");
     }
 
     public WeaponUpgradeData GetActiveWeapon()
@@ -136,11 +137,34 @@ public class SaveManager : MonoBehaviour
         
         string dataPath = Application.persistentDataPath;
         var serializer = new XmlSerializer(typeof(SaveData));
-        var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
+        var stream = new FileStream(dataPath + "/" + "save1" + ".save", FileMode.Create);
+        serializer.Serialize(stream, activeSave);
+        stream.Close();
+        
+        serializer = new XmlSerializer(typeof(SaveData));
+        stream = new FileStream(dataPath + "/" + "levelBackup" + ".save", FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
 
         Debug.Log("Saved");
+    }
+
+    public void RestartLevel()
+    {
+        string dataPath = Application.persistentDataPath;
+
+        if (!System.IO.File.Exists(dataPath + "/" + "levelBackup" + ".save")) return;
+
+        var serializer = new XmlSerializer(typeof(SaveData));
+        var stream = new FileStream(dataPath + "/" + "levelBackup" + ".save", FileMode.Open);
+        activeSave = serializer.Deserialize(stream) as SaveData;
+        stream.Close();
+
+        Events.Restart();
+
+        hasLoaded = true;
+        
+        Debug.Log("Loaded");
     }
 }
 
