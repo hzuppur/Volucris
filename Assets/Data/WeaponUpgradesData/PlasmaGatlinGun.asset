@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlasmaGatlinGun
   m_EditorClassIdentifier: 
   weaponName: PlasmaGatlinGun
-  shootingSpeed: 0.1
+  shootingSpeed: 0.05
   bulletSpeed: 40
   damage: 10
   sprite: {fileID: -6173344217043183910, guid: d5f00fe7fb1cc3144a30ab8921fad5d7, type: 3}

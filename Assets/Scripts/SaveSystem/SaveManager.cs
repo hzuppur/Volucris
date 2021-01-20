@@ -70,7 +70,7 @@ public class SaveManager : MonoBehaviour
         }
 
         var serializer = new XmlSerializer(typeof(SaveData));
-        var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
+        var stream = new FileStream(dataPath + "/" + "save1" + ".save", FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
 
@@ -91,7 +91,7 @@ public class SaveManager : MonoBehaviour
         Events.Restart();
 
         hasLoaded = true;
-
+        
         Debug.Log("Loaded");
     }
 
@@ -99,11 +99,13 @@ public class SaveManager : MonoBehaviour
     {
         string dataPath = Application.persistentDataPath;
 
-        if (!System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save")) return;
+        if (!System.IO.File.Exists(dataPath + "/" + "save1" + ".save")) return;
 
-        File.Delete(dataPath + "/" + activeSave.saveName + ".save");
+        File.Delete(dataPath + "/" + "save1" + ".save");
 
         hasLoaded = false;
+        
+        activeSave = new SaveData();
 
         Debug.Log("Deleted");
     }
@@ -116,6 +118,29 @@ public class SaveManager : MonoBehaviour
     public List<WeaponUpgradeData> GetInventory()
     {
         return activeSave.inventoryContents.Select(weapon => _weaponUpgradeDict[weapon]).ToList();
+    }
+
+    public void RemoveLevelInfo(Vector3 respawnPosition)
+    {
+        SaveData newData = new SaveData
+        {
+            currentWeapon = activeSave.currentWeapon,
+            inventoryContents = activeSave.inventoryContents,
+            respawnPosition = respawnPosition,
+            level = SceneManager.GetActiveScene().name,
+            saveName = activeSave.saveName,
+            playerHealth = activeSave.playerHealth
+        };
+
+        activeSave = newData;
+        
+        string dataPath = Application.persistentDataPath;
+        var serializer = new XmlSerializer(typeof(SaveData));
+        var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
+        serializer.Serialize(stream, activeSave);
+        stream.Close();
+
+        Debug.Log("Saved");
     }
 }
 

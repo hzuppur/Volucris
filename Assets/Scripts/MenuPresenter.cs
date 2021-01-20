@@ -53,9 +53,16 @@ public class MenuPresenter : MonoBehaviour
 
     private static void LoadLevel()
     {
-        SceneManager.LoadScene(SaveManager.Instance.activeSave.level.Contains("Level")
-            ? SaveManager.Instance.activeSave.level
-            : "Level 1");
+        if (SaveManager.Instance.activeSave.level == null)
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+        else
+        {
+            SceneManager.LoadScene(SaveManager.Instance.activeSave.level.Contains("Level")
+                ? SaveManager.Instance.activeSave.level
+                : "Level 1"); 
+        }
     }
 
     private void OnLevelWasLoaded(int level)

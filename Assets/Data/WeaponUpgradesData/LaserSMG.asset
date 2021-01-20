@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: LaserSMG
   shootingSpeed: 0.1
   bulletSpeed: 50
-  damage: 10
+  damage: 40
   sprite: {fileID: 5764777498215884308, guid: 415b81e8259fc6842a9ebe5a5f1db48a, type: 3}
   bulletAmount: 1
   bullerSpread: 10

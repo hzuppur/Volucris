@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerEvents : MonoBehaviour
 {
@@ -35,18 +36,28 @@ public class PlayerEvents : MonoBehaviour
     {
         if (SaveManager.Instance.hasLoaded)
         {
-            gameObject.transform.position = SaveManager.Instance.activeSave.respawnPosition;
+            // Player spawned in new level
+            if (SceneManager.GetActiveScene().name != SaveManager.Instance.activeSave.level)
+            {
+                SaveManager.Instance.RemoveLevelInfo(gameObject.transform.position);
+            }
+            // Player spawned is same level
+            else
+            {
+                gameObject.transform.position = SaveManager.Instance.activeSave.respawnPosition;
+                Events.SetPlayerHealth(SaveManager.Instance.activeSave.playerHealth);
+                _enemiesKilled = SaveManager.Instance.activeSave.enemiesKilled;
+                _weaponsCollected = SaveManager.Instance.activeSave.weaponsCollected;
+                _doorsOpened = SaveManager.Instance.activeSave.doorsOpened;
+
+                DestroyAllInList(_enemiesKilled, false);
+                DestroyAllInList(_weaponsCollected, false);
+                DestroyAllInList(_doorsOpened, false);
+                DestroyAllInList(SaveManager.Instance.activeSave.savePointsCollected, true);
+            }
+
             Events.SetInventory(SaveManager.Instance.GetInventory());
             Events.SelectWeapon(SaveManager.Instance.GetActiveWeapon());
-            Events.SetPlayerHealth(SaveManager.Instance.activeSave.playerHealth);
-            _enemiesKilled = SaveManager.Instance.activeSave.enemiesKilled;
-            _weaponsCollected = SaveManager.Instance.activeSave.weaponsCollected;
-            _doorsOpened = SaveManager.Instance.activeSave.doorsOpened;
-
-            DestroyAllInList(_enemiesKilled, false);
-            DestroyAllInList(_weaponsCollected, false);
-            DestroyAllInList(_doorsOpened, false);
-            DestroyAllInList(SaveManager.Instance.activeSave.savePointsCollected, true);
         }
         else
         {
@@ -58,6 +69,8 @@ public class PlayerEvents : MonoBehaviour
     {
         foreach (var item in list)
         {
+            if (GameObject.Find(item) == null) return;
+
             if (hitboxOnly)
             {
                 Destroy(GameObject.Find(item).GetComponent<BoxCollider2D>());
