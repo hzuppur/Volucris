@@ -470,6 +470,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f280e58f988325740aa52290ddf5d212, type: 2}
   - {fileID: 11400000, guid: 4bee155585d83a94388a58e3c3aa011b, type: 2}
   - {fileID: 11400000, guid: 07a2b4730c418574587acdf1866e2970, type: 2}
+  - {fileID: 11400000, guid: df94be8a33b783d498dd638bd2bd9238, type: 2}
   activeSave:
     saveName: 
     respawnPosition: {x: 0, y: 0, z: 0}
@@ -1136,6 +1137,7 @@ Transform:
   - {fileID: 1620088985}
   - {fileID: 1426431094}
   - {fileID: 619753838}
+  - {fileID: 1801232730}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10827,6 +10829,84 @@ Transform:
   m_Father: {fileID: 84954311}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1801232730 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+  m_PrefabInstance: {fileID: 1816124067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1816124067
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 595461319}
+    m_Modifications:
+    - target: {fileID: 7570320424345021168, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_Name
+      value: WeaponUpgrade (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021172, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021172, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -533.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -263.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.175987
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021173, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570320424345021174, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6718972946676642575, guid: de75574f1b831c242a239742e3f6936e, type: 3}
+    - target: {fileID: 7570320424345021175, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
+      propertyPath: weaponUpgradeData
+      value: 
+      objectReference: {fileID: 11400000, guid: df94be8a33b783d498dd638bd2bd9238, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab44bfd91e984b499fb99e498fa48fe, type: 3}
 --- !u!1001 &1895380097
 PrefabInstance:
   m_ObjectHideFlags: 0

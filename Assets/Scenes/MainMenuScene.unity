@@ -2744,6 +2744,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f280e58f988325740aa52290ddf5d212, type: 2}
   - {fileID: 11400000, guid: 4bee155585d83a94388a58e3c3aa011b, type: 2}
   - {fileID: 11400000, guid: 07a2b4730c418574587acdf1866e2970, type: 2}
+  - {fileID: 11400000, guid: df94be8a33b783d498dd638bd2bd9238, type: 2}
   activeSave:
     saveName: 
     respawnPosition: {x: 0, y: 0, z: 0}
