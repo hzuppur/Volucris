@@ -8,10 +8,15 @@ public class Bullet : MonoBehaviour
     public int damage = 100;
     public Rigidbody2D rb;
     public GameObject impactEffect;
+    public Color bulletColor;
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
+        if (bulletColor != Color.white)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = bulletColor;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo){

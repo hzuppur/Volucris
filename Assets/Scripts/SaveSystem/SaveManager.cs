@@ -48,7 +48,7 @@ public class SaveManager : MonoBehaviour
         Events.OnLoadCheckpoint -= Load;
     }
 
-    private void Save()
+    private void Save(string savePointName)
     {
         string dataPath = Application.persistentDataPath;
 
@@ -63,6 +63,11 @@ public class SaveManager : MonoBehaviour
         activeSave.enemiesKilled = Events.GetEnemiesKilled();
         activeSave.weaponsCollected = Events.GetWeaponUpgradePickups();
         activeSave.doorsOpened = Events.GetDoorOpened();
+
+        if (savePointName != "")
+        {
+            activeSave.savePointsCollected.Add(savePointName);
+        }
 
         var serializer = new XmlSerializer(typeof(SaveData));
         var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
@@ -126,4 +131,5 @@ public class SaveData
     public List<string> enemiesKilled;
     public List<string> weaponsCollected;
     public List<string> doorsOpened;
+    public List<string> savePointsCollected = new List<string>();
 }

@@ -21,7 +21,7 @@ public class PlayerCollisions : MonoBehaviour
         }
         else if (other.collider.gameObject.name.Contains("SavePoint"))
         {
-            Events.SaveGame();
+            Events.SaveGame(other.gameObject.name);
             other.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
         else if (other.gameObject.CompareTag("Platform"))

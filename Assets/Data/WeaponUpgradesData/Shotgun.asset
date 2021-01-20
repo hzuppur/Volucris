@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Shotgun
   shootingSpeed: 2
-  damage: 1
+  bulletSpeed: 20
+  damage: 20
   sprite: {fileID: 21300000, guid: 067c3fe3535aa5041b7cb22038ed38f9, type: 3}
   bulletAmount: 5
   bullerSpread: 40
   sound: {fileID: 11400000, guid: c1234ac9302f51e4e91262cd335a2656, type: 2}
+  bulletColor: {r: 1, g: 1, b: 1, a: 1}

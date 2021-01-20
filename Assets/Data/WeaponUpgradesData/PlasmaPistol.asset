@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c7b9ce3eaaab674faf4d262bed2059b, type: 3}
-  m_Name: FastBlaster
+  m_Name: PlasmaPistol
   m_EditorClassIdentifier: 
-  weaponName: FastBlaster
-  shootingSpeed: 0.2
-  bulletSpeed: 20
-  damage: 20
-  sprite: {fileID: 1580747275825210771, guid: de53b23c5590bac468847d54a8357361, type: 3}
+  weaponName: PlasmaPistol
+  shootingSpeed: 0.5
+  bulletSpeed: 40
+  damage: 60
+  sprite: {fileID: -7518849340756929260, guid: 622d800f70c2bb144985a42b0ae4f1a2, type: 3}
   bulletAmount: 1
   bullerSpread: 0
   sound: {fileID: 11400000, guid: 60b2111c40611b24ab509e75f33ba8f8, type: 2}
-  bulletColor: {r: 1, g: 1, b: 1, a: 1}
+  bulletColor: {r: 0.15508187, g: 0.7218984, b: 0.8018868, a: 1}

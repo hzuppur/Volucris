@@ -43,21 +43,29 @@ public class PlayerEvents : MonoBehaviour
             _weaponsCollected = SaveManager.Instance.activeSave.weaponsCollected;
             _doorsOpened = SaveManager.Instance.activeSave.doorsOpened;
 
-            DestroyAllInList(_enemiesKilled);
-            DestroyAllInList(_weaponsCollected);
-            DestroyAllInList(_doorsOpened);
+            DestroyAllInList(_enemiesKilled, false);
+            DestroyAllInList(_weaponsCollected, false);
+            DestroyAllInList(_doorsOpened, false);
+            DestroyAllInList(SaveManager.Instance.activeSave.savePointsCollected, true);
         }
         else
         {
-            Events.SaveGame();
+            Events.SaveGame("");
         }
     }
 
-    private void DestroyAllInList(List<string> list)
+    private void DestroyAllInList(List<string> list, bool hitboxOnly)
     {
         foreach (var item in list)
         {
-            Destroy(GameObject.Find(item));
+            if (hitboxOnly)
+            {
+                Destroy(GameObject.Find(item).GetComponent<BoxCollider2D>());
+            }
+            else
+            {
+                Destroy(GameObject.Find(item));
+            }
         }
     }
 

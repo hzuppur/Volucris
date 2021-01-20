@@ -61,7 +61,10 @@ public class Weapon : MonoBehaviour
             float bulletRotNorm = Random.Range(-currentWeaponData.bullerSpread / 180, currentWeaponData.bullerSpread /
                 180);
             Quaternion bulletRot = Quaternion.FromToRotation(new Vector3(1, bulletRotNorm, 0), firePoint.right);
-            Instantiate(bulletPrefab, firePoint.position, bulletRot);
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, bulletRot);
+            bullet.GetComponent<Bullet>().speed = currentWeaponData.bulletSpeed;
+            bullet.GetComponent<Bullet>().bulletColor = currentWeaponData.bulletColor;
+            bullet.GetComponent<Bullet>().damage = currentWeaponData.damage;
         }
     }
 }

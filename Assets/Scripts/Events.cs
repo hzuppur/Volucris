@@ -31,8 +31,8 @@ public static class Events
     public static event Func<WeaponUpgradeData> OnGetSelectedWeaponData;
     public static WeaponUpgradeData GetSelectedWeaponData() => OnGetSelectedWeaponData?.Invoke();
 
-    public static event Action OnSaveGame;
-    public static void SaveGame() => OnSaveGame?.Invoke();
+    public static event Action<string> OnSaveGame;
+    public static void SaveGame(string name) => OnSaveGame?.Invoke(name);
 
     public static event Action OnLoadCheckpoint;
     public static void LoadCheckpoint() => OnLoadCheckpoint?.Invoke();
