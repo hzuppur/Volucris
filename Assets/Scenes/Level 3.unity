@@ -2257,7 +2257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8137021405885774006, guid: 6246356c948c8bb45a8dbecfa1db3975, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8137021405885774006, guid: 6246356c948c8bb45a8dbecfa1db3975, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   takeDamageSound: {fileID: 11400000, guid: fd7ff40479443e446b28735bf6a946ee, type: 2}
-  dieSound: {fileID: 11400000, guid: c14e648afe008f049b3a6bc7d031ecd0, type: 2}
+  dieSound: {fileID: 0}
 --- !u!61 &1343304829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2745,7 +2745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581112980684071598, guid: c65c4bc23771a2b4eb9f1084555277a7, type: 3}
       propertyPath: m_Text
-      value: Fresh air feels nice!
+      value: 'It seems that there is another facility!
+
+
+        Just a couple of
+        obstacles are in the way . . . '
       objectReference: {fileID: 0}
     - target: {fileID: 5581112980684071598, guid: c65c4bc23771a2b4eb9f1084555277a7, type: 3}
       propertyPath: m_LineSpacing
