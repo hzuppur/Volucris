@@ -14,6 +14,10 @@ public class PlayerCollisions : MonoBehaviour
         {
             Events.PlayerWin();
         }
+        else if (other.collider.gameObject.name == "NextLevel")
+        {
+            Events.PlayerFinishLevel();
+        }
         else if (other.collider.gameObject.name.Contains("WeaponUpgrade"))
         {
             Events.WeaponUpgradePickup(other.gameObject.GetComponent<WeaponUpgrade>().weaponUpgradeData, other.gameObject.name);

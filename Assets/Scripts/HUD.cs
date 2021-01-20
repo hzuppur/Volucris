@@ -30,11 +30,13 @@ public class HUD : MonoBehaviour
         Instance = this;
         Events.OnPlayerDeath += OnPlayerDeath;
         Events.OnPlayerWin += OnPlayerWin;
+        Events.OnPlayerFinishLevel += OnPlayerFinishLevel;
     }
     private void OnDestroy()
     {
         Events.OnPlayerDeath -= OnPlayerDeath;
         Events.OnPlayerWin -= OnPlayerWin;
+        Events.OnPlayerFinishLevel -= OnPlayerFinishLevel;
     }
 
     private void Start()
@@ -56,6 +58,11 @@ public class HUD : MonoBehaviour
         _playerActive = false;
         YouWin.gameObject.SetActive(true);
         ShowOnScreenMenu(true);
+    }
+
+    private void OnPlayerFinishLevel(){
+        Debug.Log("Next level");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     private void OnPlayerDeath()

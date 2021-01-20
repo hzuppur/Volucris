@@ -20,6 +20,9 @@ public static class Events
     public static event Action OnPlayerWin;
     public static void PlayerWin() => OnPlayerWin?.Invoke();
 
+    public static event Action OnPlayerFinishLevel;
+    public static void PlayerFinishLevel() => OnPlayerFinishLevel?.Invoke();
+
     public static event Action<WeaponUpgradeData, string> OnWeaponUpgradePickup;
 
     public static void WeaponUpgradePickup(WeaponUpgradeData weaponUpgradeData, string name) =>
