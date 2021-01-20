@@ -2742,6 +2742,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04635bd1bc4fe23458531ae1e9297dd1, type: 2}
   - {fileID: 11400000, guid: 4c9b1b3f29c844b4fba4a2fbf4896b9f, type: 2}
   - {fileID: 11400000, guid: f280e58f988325740aa52290ddf5d212, type: 2}
+  - {fileID: 11400000, guid: 4bee155585d83a94388a58e3c3aa011b, type: 2}
+  - {fileID: 11400000, guid: 07a2b4730c418574587acdf1866e2970, type: 2}
   activeSave:
     saveName: 
     respawnPosition: {x: 0, y: 0, z: 0}
@@ -2752,6 +2754,7 @@ MonoBehaviour:
     enemiesKilled: []
     weaponsCollected: []
     doorsOpened: []
+    savePointsCollected: []
   hasLoaded: 0
 --- !u!4 &1712276910
 Transform:
