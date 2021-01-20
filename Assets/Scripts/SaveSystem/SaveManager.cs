@@ -159,6 +159,11 @@ public class SaveManager : MonoBehaviour
         var stream = new FileStream(dataPath + "/" + "levelBackup" + ".save", FileMode.Open);
         activeSave = serializer.Deserialize(stream) as SaveData;
         stream.Close();
+        
+        serializer = new XmlSerializer(typeof(SaveData));
+        stream = new FileStream(dataPath + "/" + "save1" + ".save", FileMode.Create);
+        serializer.Serialize(stream, activeSave);
+        stream.Close();
 
         Events.Restart();
 
