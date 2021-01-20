@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
 
     private float _startY;
     // Start is called before the first frame update
+    public AudioClipGroup pickupKey;
     public void Start()
     {
         _startY = gameObject.transform.position.y;
@@ -24,6 +25,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Player"){
+            pickupKey.Play();
             Events.DoorOpened(transform.parent.gameObject.name);
             Destroy(this.transform.parent.gameObject);
         }

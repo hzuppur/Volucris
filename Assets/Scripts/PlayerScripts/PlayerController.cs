@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+  
     public float MovementSpeed = 1;
     public float JumpForce = 1;
     private Animator _animator;
@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
         }
         if(_rigidbody.velocity.y < 0){
             _animator.Play("Jump");
+            
         }
 
         if (Input.GetButtonDown("Jump") && onGround)
