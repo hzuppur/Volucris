@@ -24,7 +24,8 @@ public class PlayerCollisions : MonoBehaviour
             Destroy(other.gameObject);
         }
         else if (other.collider.gameObject.name.Contains("SavePoint"))
-        {
+        {    
+            other.gameObject.GetComponent<SavePoint>().Play();
             Events.SaveGame(other.gameObject.name);
             other.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f24e200034584840b15c4d5de07e653, type: 3}
-  m_Name: PlayerDeathSound
+  m_Name: SavePoint
   m_EditorClassIdentifier: 
   VolumeMin: 1
   VolumeMax: 1
@@ -18,4 +18,4 @@ MonoBehaviour:
   PitchMax: 1
   Cooldown: 0.1
   Clips:
-  - {fileID: 8300000, guid: 9abeb8b8794c6fd42bf14391a148d13b, type: 3}
+  - {fileID: 8300000, guid: f0e8c244bbf6b354898f7192a5c0d8e3, type: 3}
