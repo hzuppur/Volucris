@@ -62,6 +62,7 @@ public class HUD : MonoBehaviour
 
     private void OnPlayerFinishLevel(){
         Debug.Log("Next level");
+        Events.SaveGame("");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 

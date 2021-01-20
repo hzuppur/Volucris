@@ -86,6 +86,7 @@ public class MenuPresenter : MonoBehaviour
     {
         OptionsPresenter.gameObject.SetActive(true);
         StartButton.gameObject.SetActive(false);
+        ContinueButton.gameObject.SetActive(false);
         OptionsButton.gameObject.SetActive(false);
         ExitButton.gameObject.SetActive(false);
         VolucrisText.gameObject.SetActive(false);
@@ -95,6 +96,7 @@ public class MenuPresenter : MonoBehaviour
     {
         OptionsPresenter.gameObject.SetActive(false);
         StartButton.gameObject.SetActive(true);
+        ContinueButton.gameObject.SetActive(true);
         OptionsButton.gameObject.SetActive(true);
         ExitButton.gameObject.SetActive(true);
         VolucrisText.gameObject.SetActive(true);
